@@ -1,0 +1,12 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: rock-paper-scissors
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+  healthcheck:
+    enabled: false
+  image: eu.gcr.io/rctf-379820/rock-paper-scissors-challenge:8631cc9d762c7da89fd7a61346e103864592efdb38bd36240f21d47c7a4df9e2

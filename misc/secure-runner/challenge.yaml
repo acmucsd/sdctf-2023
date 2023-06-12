@@ -1,0 +1,23 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  #change to chal name
+  name: secure-runner
+spec:
+  deployed: true
+  network:
+    public: true
+  healthcheck:
+    enabled: false
+  podTemplate:
+    template:
+      spec:
+        volumes:
+          - name: temp
+            emptyDir: {}
+        containers:
+          - name: challenge
+            volumeMounts:
+              - mountPath: /tmp
+                name: temp
+  image: eu.gcr.io/rctf-379820/secure-runner-challenge:fc861fa2b557b84b205a65e5e490814dd04ffb10062b6f9f6f46a320cf577cb5

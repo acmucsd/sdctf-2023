@@ -1,0 +1,13 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  #change to chal name
+  name: turtle-shell
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+  healthcheck:
+    enabled: false
+  image: eu.gcr.io/rctf-379820/turtle-shell-challenge:bd87b18a4e2f81b97fc38fc85fa937e1d69921e0c73dbe5d285c9855143f21bb

@@ -1,0 +1,33 @@
+Use 64-bit ints instead of 128 for convenience probably
+
+Have a marker in a binary
+
+
+
+UNIQUE_MARKER
+[x]
+[r]
+[y]
+
+Every iteration do:
+r' <-$- Z_p # Use /dev/urandom or getrandom() syscall
+x <- x * c * r' mod p
+r <- r * r'
+y <- y + 1
+
+At the end (when y = y_0), make sure x * r^{-1} is the flag
+
+
+Spec:
+
+The nth doll have the name doll-n and will print:
+
+Extracted the next doll to doll-{n+1}. You will find the flag in the innermost doll.
+Good luck!
+
+OR
+
+Congrats! You found the innermost doll and found this written on it:
+FLAG
+
+Test for bugs in Big-integer systems and printing, or use some built-in like __int128

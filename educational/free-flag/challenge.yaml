@@ -1,0 +1,27 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: freeflag
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+    ports:
+      - protocol: "HTTPS"
+        targetPort: 1337
+  healthcheck:
+    # TIP: disable the healthcheck during development
+    enabled: false
+  podTemplate:
+    template:
+      spec:
+        volumes:
+          - name: temp
+            emptyDir: {}
+        containers:
+          - name: challenge
+            volumeMounts:
+              - mountPath: /home/user/
+                name: temp
+  image: eu.gcr.io/rctf-379820/freeflag-challenge:f9e5d4596b08eba49b2702454a6a09c5007cc2257f930d85f6de9e038f30e5b7

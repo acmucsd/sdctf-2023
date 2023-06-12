@@ -1,0 +1,12 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: sha256-ctr
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+  healthcheck:
+    enabled: false
+  image: eu.gcr.io/rctf-379820/sha256-ctr-challenge:f81a336d20a9bfc6c61e51166fd728def9aa84187f2f2346c8e56e74c75589c9

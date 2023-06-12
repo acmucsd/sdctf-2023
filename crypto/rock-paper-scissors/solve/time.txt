@@ -1,0 +1,4 @@
+[*] Collision generated: rock.txt.coll paper.txt.coll
+fe206f0fdbf7db6d9ddd50e07a2238d5  rock.txt.coll
+fe206f0fdbf7db6d9ddd50e07a2238d5  paper.txt.coll
+[*] Process completed in 266 minutes (1 backtracks).

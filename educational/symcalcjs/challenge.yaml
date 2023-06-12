@@ -1,0 +1,12 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: symcaljs
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+  healthcheck:
+    enabled: false
+  image: eu.gcr.io/rctf-379820/symcaljs-challenge:2a9bcc4effd06681c81ceadb84c890070523c2b068b2f22ccf50ef3ff8385331

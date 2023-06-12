@@ -1,0 +1,13 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  #change to chal name
+  name: lake-of-prf
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+  healthcheck:
+    enabled: false
+  image: eu.gcr.io/rctf-379820/lake-of-prf-challenge:459f57def2d70a562ff444c77b9c90cbb2ac5068fcbbe9039a7ebcabf16337f0

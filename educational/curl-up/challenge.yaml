@@ -1,0 +1,28 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: curl
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+    ports:
+      - protocol: "HTTPS"
+        targetPort: 1337
+  healthcheck:
+    # TIP: disable the healthcheck during development
+    enabled: false
+    image: eu.gcr.io/rctf-379820/curl-healthcheck:ac601c8b4a72141a105f2d2449d2e1d7bae8211608596e21ac0fa7e6bb3db6d8
+  podTemplate:
+    template:
+      spec:
+        volumes:
+          - name: temp
+            emptyDir: {}
+        containers:
+          - name: challenge
+            volumeMounts:
+              - mountPath: /root/.npm
+                name: temp
+  image: eu.gcr.io/rctf-379820/curl-challenge:c0758acd117886e91a2b9e357f8a5aca642640bb3b42d3e06c453405525fad22

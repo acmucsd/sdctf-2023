@@ -1,0 +1,12 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: fork-bomb-protector
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+  healthcheck:
+    enabled: false
+  image: eu.gcr.io/rctf-379820/fork-bomb-protector-challenge:6fe60b347b9e2183d421dd8eeb0ec47677fa581a07541391c57f9e01c66fe0f3

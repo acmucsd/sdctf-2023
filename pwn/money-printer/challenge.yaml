@@ -1,0 +1,14 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  #change to chal name
+  name: money-printer
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+  healthcheck:
+    enabled: false
+    image: eu.gcr.io/sdctf-307600/money-printer-healthcheck:1797959630837904011c227dce4cdfe082e5a7a93bbac79e63c401e09db582a9
+  image: eu.gcr.io/rctf-379820/money-printer-challenge:8dfc659a820eaf7cd9a6b83c1b0f9b689fc27f8edebe502b14d156deb02398e0

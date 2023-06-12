@@ -1,0 +1,28 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: vault
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+    ports:
+      - protocol: "HTTPS"
+        targetPort: 1337
+  healthcheck:
+    # TIP: disable the healthcheck during development
+    enabled: false
+    image: eu.gcr.io/sdctf-307600/curl-healthcheck:53531b9dc2885acfdf22110c9dc8e91f2794db1c724a049daff9f241c99895c7
+  podTemplate:
+    template:
+      spec:
+        volumes:
+          - name: temp
+            emptyDir: {}
+        containers:
+          - name: challenge
+            volumeMounts:
+              - mountPath: /root/.npm
+                name: temp
+  image: eu.gcr.io/rctf-379820/vault-challenge:c4a37ee43536bfc38b365ec5d7ce392f27d6696bb43260349ba965452b9fcc51
